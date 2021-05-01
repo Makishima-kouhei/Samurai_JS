@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>サンプルデモ</title>
+    </head>
+    <body>
+        <form name = "myForm1">
+            <div>名前：</div>
+            <input type="text" name="myName" />
+        </form>
+        
+        <form name = "myForm2">
+            <div>メールアドレス：</div>
+            <input type="text" name="myAdress" />
+        </form>
+        
+        <form name = "myForm3">
+            <div>年齢</div>
+            <input type="radio" name="myAge" value="20" />20代
+            <input type="radio" name="myAge" value="30" />30代
+            <input type="radio" name="myAge" value="40" />40代
+            <input type="radio" name="myAge" value="50" />50代
+        </form>
+        
+        <form name = "myForm4">
+            <label>普段使っているスマホは？</label><br/>
+            <input type="checkbox" name="os" value="iphone" />iPhone
+            <input type="checkbox" name="os" value="android" />Android
+            <input type="checkbox" name="os" value="garakei" />ガラケー
+            <input type="checkbox" name="os" value="sonota" />その他
+        </form>
+        
+        <button id = "btn">実行</button>
+        
+        
+        <script>
+        
+            const btn = document.getElementById('btn');
+            
+            btn.addEventListener("click", () =>{
+                
+                const form1 = document.forms.myForm1;
+                console.log(form1.myName.value);
+                
+                const form2 = document.forms.myForm2;
+                console.log(form2.myAdress.value);
+                
+                const form3 = document.forms.myForm3;
+                console.log(form3.myAge.value);
+                
+                const form4 = document.forms.myForm4;
+                
+                form4.os.forEach(item =>{
+                    if(item.checked) console.log(item.value);   
+                })
+                
+                
+            });
+            
+            
+            
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScriptの練習</title>
+    </head>
+    <body>
+        
+        <script>
+        
+            class Animal {
+                constructor(name, age){
+                    this.name = name;
+                    this.age = age;
+                    
+                }
+            }
+            
+            class Cat extends Animal {
+                constructor(name,age,type){
+                    super(name,age);
+                    this.type = type;
+                }    
+                speak() {
+                    console.log(cat.name + 'が「にゃーん」と泣きました');
+                }
+            
+            }
+            
+            const cat = new Cat('neko', 8, 'syam');
+            
+            
+            
+            cat.speak();
+            
+            
+            
+            
+            
+        </script>
+    </body>
+</html>

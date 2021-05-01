@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScriptの練習</title>
+    </head>
+    <body>
+        
+        <script>
+
+            let enemy_hp = 10;
+            
+            while(true) {
+                
+                let command = prompt('敵が現れた！（【１】攻撃　【２】逃げる）');
+                let attack = Math.floor(Math.random() * 10);
+                
+                if(command === '1') {
+                    
+                    // 攻撃が当たらなかった場合（attackが0）
+                    if (attack == 0) {
+                        console.log('攻撃は当たらなかった！');
+                        continue;
+                    }
+                    
+                    // 攻撃が当たった場合（attackが0以外）
+                    console.log(attack + 'の攻撃！');
+
+                    enemy_hp = enemy_hp - attack;
+    
+                    if (enemy_hp <= 0) {
+                        console.log('敵を倒した！');
+                        break;
+                    }
+                    
+                    console.log('敵の体力は残り' + enemy_hp + 'です');
+                    
+
+                } else if (command === '2') {
+                    console.log('無事に逃げました');
+                    break;
+                }
+            }
+            console.log('ゲーム終了');        
+            
+        </script>
+    </body>
+</html>
+
+<!--
+
+
+攻撃力は0〜9の乱数で生成
+OK 攻撃力の数値を「◯の攻撃！」のように毎回出力する
+敵の体力は10
+OK「敵の体力は残り◯です」というメッセージを毎回出力する
+OK prompt()から攻撃するか逃げるかを数値で毎回入力できること
+OK 逃げるを選択した場合は「無事に逃げました」のメッセージを出力
+OK 敵を倒したら「敵を倒した！」というメッセージを出力
+OK ゲーム終了時に「ゲーム終了」というメッセージを出力
+ゲームが終了したらプログラムも終了する
+
+-->
